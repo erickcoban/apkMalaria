@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Identificador de Formulario -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Notificar Caso"
+        android:id="@+id/lbl_crear_caso"
+        android:layout_gravity="right"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <!--Mensaje de Bienvenida-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Bienvenido al Formulario Notificar Caso"
+                android:id="@+id/txt_welcome"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textIsSelectable="false"
+                android:textStyle="bold|italic"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <!-- Fecha en que llega el paciente-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Selecione la Fecha en que llego el Paciente"
+                android:id="@+id/lbl_fecha_registro"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/fecha_registro"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Fecha en que inicio Sintomas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Selecione la Fecha en que inicio de Sintomas"
+                android:id="@+id/lbl_fecha_sintomas"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/fecha_sintomas"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Listado de Sintomas que Presenta el Paciente-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione los Sintomas que tiene el Paciente"
+                android:id="@+id/lbl_sintomas"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sintomas">
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fiebre"
+                    android:id="@+id/fiebre"
+                    android:layout_marginLeft="20dp"
+                    android:checked="false" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dolor de Cabeza"
+                    android:id="@+id/dolor_de_cabeza"
+                    android:layout_marginLeft="20dp"
+                    android:checked="false" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Escalofrios"
+                    android:id="@+id/escalofrios"
+                    android:layout_marginLeft="20dp"
+                    android:checked="false" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dolor de Cuerpo"
+                    android:id="@+id/dolor_de_cuerpo"
+                    android:layout_marginLeft="20dp"
+                    android:checked="false" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Otro"
+                    android:id="@+id/otro"
+                    android:layout_marginLeft="20dp"
+                    android:checked="false" />
+            </RadioGroup>
+
+            <!-- Oculta la pregunta si tiene otro Sintoma diferente -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ocultar_sintomas"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- Pregunta si tiene otro Sintoma diferente -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Escriba que otro sintoma tiene el Paciente"
+                    android:id="@+id/lbl_otro_sintoma"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/otro_sintoma"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+            </LinearLayout>
+
+            <!-- Selecciona el Tipo de Prueba que le hizo al Paciente -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Selecione que tipo de Prueba le hizo al Paciente"
+                android:id="@+id/lbl_tipo_prueba"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tipo_prueba">
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prueba Rapida"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/prueba_rapida"
+                    android:checked="false" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gota Gruesa"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/gota_gruesa"
+                    android:checked="false" />
+            </RadioGroup>
+
+            <!-- Tipo de muestra a la pertenece -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Selecione el Tipo de Prueba"
+                android:id="@+id/lbl_tipo_muestra"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tipo_muestra">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Muestra de Diagnostico"
+                    android:id="@+id/muestra_diagnostico"
+                    android:checked="false" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Muestra de Control"
+                    android:id="@+id/muestra_control"
+                    android:checked="false" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Muestra de Embarazada"
+                    android:id="@+id/muestra_embarazada"
+                    android:checked="false" />
+            </RadioGroup>
+
+            <!-- Fecha en que tomo la Muestra Hemática -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Selecione la Fecha en que tomo la Muestra Hematica"
+                android:id="@+id/lbl_fecha_toma_mh"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/fecha_toma_mh"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Escriba la Clave y No -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Clave y No."
+                android:id="@+id/lbl_clave_no"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/clave_no"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <!--Datos Personales-->
+            <!-- Escriba el Primer Nombre -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Primer Nombre"
+                android:id="@+id/lbl_primer_nombre"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/primer_nombre"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <!-- Escriba el Segundo Nombre -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Segundo Nombre"
+                android:id="@+id/lbl_segundo_nombre"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/segundo_nombre"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <!-- Escriba el Primer Apellido -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Primer Apellido"
+                android:id="@+id/lbl_primer_apellido"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/primer_apellido"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <!-- Escriba el Segundo Apellido -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Segundo Apellido"
+                android:id="@+id/lbl_segundo_apellido"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/segundo_apellido"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <!-- Escriba el Apellido de Casada -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Apellido Casada"
+                android:id="@+id/lbl_apellido_casada"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/apellido_casada"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <!-- Seleccione el Genero de la Persona -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione el sexo del Paciente"
+                android:id="@+id/lbl_genero"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/genero">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Femenino"
+                    android:id="@+id/femenino"
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masculino"
+                    android:id="@+id/masculino"/>
+            </RadioGroup>
+
+            <!-- Seleccione la Fecha de Nacimiento -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la fecha de Nacimiento"
+                android:id="@+id/lbl_fecha_nacimiento"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/fecha_nacimiento"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Oculta la pregunta Seleccione si la Paciente esta Embarazada -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/oculta_embarazo"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!-- Seleccione si la Paciente esta Embarazada -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Seleccione si la Paciente esta Embarazada"
+                    android:id="@+id/lbl_embarazada"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/embarazada">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:id="@+id/item_no"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Si"
+                        android:id="@+id/item_si"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Oculta la pregunta de meses de Embarazo -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/oculta_meses"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!-- Escriba los meses de Embarazo -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Escriba cuantos meses de embarazo tiene"
+                    android:id="@+id/lbl_meses_embarazo"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/meses_embarazo"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+            </LinearLayout>
+
+            <!-- Oculta la seleccione el Resultado de la PDR -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ocultar_res_pdr"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!-- Seleccione el Resultado de la PDR -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Seleccione que le muestra la Prueba Rápida"
+                    android:id="@+id/lbl_resultado_pdr"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/resultado_pdr">
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="C"
+                        android:id="@+id/item_c"/>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="1"
+                        android:id="@+id/item_1"/>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="2"
+                        android:id="@+id/item_2"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Condicionar los TextView para que se muestre según resultado de PDR -->
+
+            <!--Mensaje de Gracias por Completar el Formulario -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Gracias por Completar en Formulario"
+                android:id="@+id/lbl_gracias_e1"
+                android:textStyle="bold|italic"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <!-- Boton para enviar los datos a la Base de Datos -->
+            <Button
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:text="Guardar y Enviar"
+                android:id="@+id/btn_crear_caso"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

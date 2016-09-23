@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.subprogramamalaria.proyectomalaria" >
+
+    <!--Permisos de la API -->
+    <uses-permission android:name="android.permission.INTERNET"
+        android:label="@string/INTERNET_label"
+        android:description="@string/INTERNET_description"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"
+        android:label="@string/ACCESS_WIFI_STATE_label"
+        android:description="@string/ACCESS_WIFI_STATE_description"/>
+    <uses-permission android:name="android.permission.SEND_SMS"
+        android:label="@string/SEND_SMS_label"
+        android:description="@string/SEND_SMS_description"/>
+    <uses-permission android:name="android.permission.BROADCAST_SMS"
+        android:label="@string/BROADCAST_SMS_description"
+        android:description="@string/BROADCAST_SMS_description"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:logo="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Login"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Menu" />
+        <activity android:name=".Register" />
+        <activity
+            android:name=".form_crear_caso"
+            android:label="@string/title_activity_crear_caso" >
+        </activity>
+        <activity
+            android:name=".form_confirmar"
+            android:label="@string/title_activity_confirmar" >
+        </activity>
+        <activity
+            android:name=".form_mini_bress"
+            android:label="@string/title_activity_mini_bress" >
+        </activity>
+        <activity
+            android:name=".form_reporte_baf"
+            android:label="@string/title_activity_reporte_baf" >
+        </activity>
+    </application>
+
+</manifest>

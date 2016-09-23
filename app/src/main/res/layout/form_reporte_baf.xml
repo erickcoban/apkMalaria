@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Identificador de Formulario -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Reporte BAF"
+        android:id="@+id/lbl_reporte_baf"
+        android:layout_gravity="right"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <!--Mensaje de Bienvenida-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Bienvenido al Formulario Reporte BAF"
+                android:id="@+id/txt_welcome"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textIsSelectable="false"
+                android:textStyle="bold|italic"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <!-- Pregunta la fecha en que realizo el BAF -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la Fecha en que realizo en BAF"
+                android:id="@+id/lbl_vence_acetaminofen_500mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/fecha_reporte_baf"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Pregunta Cuantas MH recolecto en el BAF -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Cuantas Muestras Hematicas Recolecto"
+                android:id="@+id/lbl_cuantas_mh_baf"
+                android:inputType="number"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cuantas_mh_baf"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta Cuantas MH son negativas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Cuantas Muestras Hematicas son Negativas"
+                android:id="@+id/lbl_cuantas_mh_negativas"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cuantas_mh_negativas"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta Cuantas MH son Positivas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Cuantas Muestras Hematicas son Positivas"
+                android:id="@+id/lbl_cuantas_mh_positivas"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cuantas_mh_positivas"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta En que Distrito realizo el BAF -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Distrito donde se realizo el BAF"
+                android:id="@+id/lbl_distrito_baf"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/distrito_baf"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta En que Comunidad realizo el BAF -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Comunidad donde se realizo el BAF"
+                android:id="@+id/lbl_comunidad_baf"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/comunidad_baf"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!--Mensaje de Gracias por Completar el Formulario -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Gracias por Completar en Formulario"
+                android:id="@+id/lbl_gracias_e1"
+                android:textStyle="bold|italic"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <!-- Boton para enviar los datos a la Base de Datos -->
+            <Button
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:text="Guardar y Enviar"
+                android:id="@+id/btn_reporte_baf"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

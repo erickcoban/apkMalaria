@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Identificador de Formulario -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Mini Bress"
+        android:id="@+id/lbl_mini_bress"
+        android:layout_gravity="right"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <!--Mensaje de Bienvenida-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Bienvenido al Formulario Mini Bress"
+                android:id="@+id/txt_welcome"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textIsSelectable="false"
+                android:textStyle="bold|italic"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <!-- Fecha de Reporte de Insumos-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la Fecha en que reporta los Insumos"
+                android:id="@+id/lbl_fecha_registro_insumos"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/fecha_registro_insumos"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Pregunta cuanto Cloroquina 150mg -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba cuanto tiene de Cloroquina 150mg"
+                android:id="@+id/lbl_tengo_cloroquina_150mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tengo_cloroquina_150mg"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta cuando Vence Cloroquina 150mg -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la Fecha en que vence la Cloroquina 150mg"
+                android:id="@+id/lbl_vence_cloroquina_150mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/vence_cloroquina_150mg"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Pregunta cuanto Primaquina 15mg -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba cuanto tiene de Primaquina 15mg"
+                android:id="@+id/lbl_tengo_primaquina_15mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tengo_primaquina_15mg"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta cuando Vence Primaquina 15mg -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la Fecha en que vence la Primaquina 15mg"
+                android:id="@+id/lbl_vence_primaquina_15mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/vence_primaquina_15mg"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Pregunta cuanto Primaquina 5mg -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba cuanto tiene de Primaquina 5mg"
+                android:id="@+id/lbl_tengo_primaquina_5mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tengo_primaquina_5mg"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta cuando Vence Primaquina 15mg -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la Fecha en que vence la Primaquina 5mg"
+                android:id="@+id/lbl_vence_primaquina_5mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/vence_primaquina_5mg"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Pregunta cuanto Acetaminofen 80mg -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba cuanto tiene de Acetaminofen 80mg"
+                android:id="@+id/lbl_tengo_acetaminofen_80mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tengo_acetaminofen_80mg"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta cuando Vence Acetaminofen 80mg -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la Fecha en que vence el Acetaminofen 80mg"
+                android:id="@+id/lbl_vence_acetaminofen_80mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/vence_acetaminofen_80mg"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Pregunta cuanto Acetaminofen 500mg -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba cuanto tiene de Acetaminofen 500mg"
+                android:id="@+id/lbl_tengo_acetaminofen_500mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tengo_acetaminofen_500mg"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta cuando Vence Acetaminofen 500mg -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la Fecha en que vence el Acetaminofen 500mg"
+                android:id="@+id/lbl_vence_acetaminofen_500mg"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/vence_acetaminofen_500mg"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Pregunta cuanto tiene de PDR -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba cuanto tiene de Pruebas Rapidas"
+                android:id="@+id/lbl_tengo_pdr"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tengo_pdr"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta cuando Vence la PDR -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la Fecha en que vence el Acetaminofen 500mg"
+                android:id="@+id/lbl_vence_pdr"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/vence_pdr"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Pregunta cuanto tiene de Laminillas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba cuanto tiene de Laminillas"
+                android:id="@+id/lbl_tengo_laminillas"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tengo_laminillas"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta cuanto tiene de Lancetas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba cuanto tiene de Lancetas"
+                android:id="@+id/lbl_tengo_lancetas"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tengo_lancetas"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta cuanto tiene de Algodon -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba cuanto tiene de Algodón"
+                android:id="@+id/lbl_tengo_algodon"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tengo_algodon"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta cuanto tiene de Alcohol -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba cuanto tiene de Alcohol"
+                android:id="@+id/lbl_tengo_alcohol"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tengo_alcohol"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!-- Pregunta Observaciones -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Observaciones"
+                android:id="@+id/lbl_observaciones"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/observaciones"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!--Mensaje de Gracias por Completar el Formulario -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Gracias por Completar en Formulario"
+                android:id="@+id/lbl_gracias_e1"
+                android:textStyle="bold|italic"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <!-- Boton para enviar los datos a la Base de Datos -->
+            <Button
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:text="Guardar y Enviar"
+                android:id="@+id/btn_reporte_insumos"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

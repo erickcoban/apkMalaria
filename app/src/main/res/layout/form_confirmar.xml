@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Identificador de Formulario -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Confirmar"
+        android:id="@+id/lbl_confimrar"
+        android:layout_gravity="right"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <!--Mensaje de Bienvenida-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Bienvenido al Formulario Confirmar"
+                android:id="@+id/txt_welcome"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textIsSelectable="false"
+                android:textStyle="bold|italic"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <!--Fecha en que recibio la Muestra Hemática-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la fecha en que recibio la Muestra Hemática"
+                android:id="@+id/lbl_fecha_recibe_mh"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/fecha_recibio_mh"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!--Fecha en que le dio lectura a la Muestra Hemática-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione la fecha en que leyo la Muestra Hemática"
+                android:id="@+id/lbl_fecha_lectura_mh"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:id="@+id/fecha_lectura_mh"
+                android:layout_gravity="center_horizontal"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <!-- Escriba el Codigo de la Muestra Hemática -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Escriba el Codigo de la Muestra Hemática"
+                android:id="@+id/lbl_codigo_mh"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/codigo_mh"
+                android:inputType="number"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <!--Resultado de la Muestra Hemática-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Seleccione el Resultado de la Muestra Hemática"
+                android:id="@+id/lbl_resultado_mh"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/resultado_mh">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Negativo"
+                    android:id="@+id/negativo"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Positivo"
+                    android:id="@+id/positivo"/>
+            </RadioGroup>
+
+            <!--Muestra esta pregunta si el Resultado es Positivo-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tipo_plas_oculto"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!-- Seleccione tipo de plasmodiun -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Seleccione el tipo de Plasmodium"
+                    android:id="@+id/lbl_tipo_plasmodium"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tipo_plasmodium">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="P. Falciparum"
+                        android:id="@+id/p_falciparum"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="P. Vivax"
+                        android:id="@+id/p_vivax"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="P. Asociado"
+                        android:id="@+id/p_asociado"
+                        android:layout_marginLeft="20dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/estadio_oculto"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!-- Estadio del Parasito -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Seleccione el tipo de Plasmodium"
+                    android:id="@+id/lbl_estadio_parasito"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/estadio_parasito">
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sexual"
+                        android:id="@+id/sexual"
+                        android:layout_marginLeft="20dp"/>
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Asexual"
+                        android:id="@+id/asexual"
+                        android:layout_marginLeft="20dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Conteo Parasitos Sexual -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sexual_oculto"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!-- Conteo Parasitos Sexual -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Seleccione el tipo de Plasmodium"
+                    android:id="@+id/lbl_conteo_sexual"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/conteo_sexual">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Menos de 40"
+                        android:id="@+id/menos_40_sexual"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+/2"
+                        android:id="@+id/media_sexual"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:id="@+id/una_sexual"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="++"
+                        android:id="@+id/dos_sexual"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+++"
+                        android:id="@+id/tres_sexual"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="++++"
+                        android:id="@+id/cuatro_sexual"
+                        android:layout_marginLeft="20dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Conteo Parasitos Sexual -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/par_sex_oculto"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!-- Escriba cuantos parasitos sexuales encontro -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Escriba cuantos parasitos encontro"
+                    android:id="@+id/lbl_cuatntos_sexual"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cuantos_sexual"
+                    android:inputType="number"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"/>
+            </LinearLayout>
+
+            <!-- Conteo Parasitos Sexual -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/asexual_oculto"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!-- Conteo Parasitos Asexual -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Seleccione el tipo de Plasmodium"
+                    android:id="@+id/lbl_conteo_asexual"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/conteo_asexual">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Menos de 40"
+                        android:id="@+id/menos_40_asexual"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+/2"
+                        android:id="@+id/media_asexual"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:id="@+id/una_asexual"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="++"
+                        android:id="@+id/dos_asexual"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+++"
+                        android:id="@+id/tres_asexual"
+                        android:layout_marginLeft="20dp"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="++++"
+                        android:id="@+id/cuatro_asexual"
+                        android:layout_marginLeft="20dp"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Conteo Parasitos Sexual -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/par_asex_oculto"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <!-- Escriba cuantos parasitos asexuales encontro -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Escriba cuantos parasitos encontro"
+                    android:id="@+id/lbl_cuatntos_asexual"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cuantos_asexual"
+                    android:inputType="number"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"/>
+            </LinearLayout>
+
+            <!--Mensaje de Gracias por Completar el Formulario -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Gracias por Completar en Formulario"
+                android:id="@+id/lbl_gracias_e1"
+                android:textStyle="bold|italic"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"/>
+
+            <!-- Boton para enviar los datos a la Base de Datos -->
+            <Button
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:text="Guardar y Enviar"
+                android:id="@+id/btn_confimar"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

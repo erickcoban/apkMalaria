@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:fillViewport="true" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:gravity="center"
+            android:text="Ministerio de Salud Pública y Asistencia Social"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="180dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/menu_principal"
+            android:layout_below="@+id/img_malaria"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/TextView01"
+            android:layout_centerVertical="true"
+            android:text="Usuario"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="90dp"/>
+
+        <EditText
+            android:id="@+id/usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/TextView01"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:layout_gravity="center_horizontal" />
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/password"
+            android:layout_alignLeft="@+id/password"
+            android:layout_marginLeft="90dp"
+            android:text="Contraseña"
+            android:layout_marginTop="5dp"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/login"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:layout_gravity="center_horizontal" />
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/login"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:text="Ingresar"
+            android:layout_gravity="center_horizontal" />
+        <Button
+            android:id="@+id/salir"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:text="Salir"
+            android:layout_marginLeft="10dp"
+            android:onClick="onclicBtnSalir"/>
+    </TableRow>
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
